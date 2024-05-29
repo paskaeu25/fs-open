@@ -1,17 +1,33 @@
-const Hello = () => {
+const Hello = (props) => {
+  console.log(props);
   return (
-    <div>
-      <p>Hello World</p>
-    </div>
+    <>
+      <p>
+        Hello {props.name}, your age is {props.age} years old
+      </p>
+    </>
+  );
+};
+
+const Footer = () => {
+  return (
+    <>
+      greeting app created by <a href="https://github.com/mluukkai">mluukkai</a>
+    </>
   );
 };
 
 const App = () => {
+  const friends = [
+    { name: 'John', age: 32 },
+    { name: 'Pete', age: 30 },
+  ];
+
   return (
-    <div>
-      <h1>Greetings</h1>
-      <Hello />
-    </div>
+    <>
+      <p>{friends[0].name}</p>
+      <p>{friends[1].name}</p>
+    </>
   );
 };
 
